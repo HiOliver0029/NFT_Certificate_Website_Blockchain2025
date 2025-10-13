@@ -6,9 +6,18 @@
   "scripts": {
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js",
-    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy-sepolia.js --network sepolia",
     "test": "hardhat test",
-    "demo": "hardhat run scripts/demo.js"
+    "demo": "hardhat run scripts/demo.js",
+    "issue": "hardhat run scripts/certificate-issuer.js",
+    "issue:local": "hardhat run scripts/certificate-issuer.js --network localhost",
+    "issue:sepolia": "hardhat run scripts/certificate-issuer.js --network sepolia",
+    "generate-images": "node scripts/generate-certificate-images.js",
+    "upload-ipfs": "node scripts/enhanced-ipfs-uploader.js",
+    "frontend": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "node": "hardhat node"
   },
   "author": "Digital Certificate Team",
   "license": "MIT",

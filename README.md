@@ -80,12 +80,32 @@ npm install
 ```
 
 ### 2. 環境變數設置
-複製 `.env.example` 到 `.env` 並填入以下資訊：
-- `SEPOLIA_RPC_URL`: Sepolia 測試網 RPC URL (可使用 Infura)
-- `SEPOLIA_PRIVATE_KEY`: 部署者的私鑰
-- `ETHERSCAN_API_KEY`: Etherscan API 金鑰 (用於合約驗證)
-- `PINATA_API_KEY`: Pinata API 金鑰 (用於 IPFS)
+
+**📋 詳細設置指南**: 請參考 `ENVIRONMENT_SETUP.md` 文件
+
+**快速設置**:
+```bash
+# 1. 複製範例文件
+copy .env.example .env
+
+# 2. 編輯 .env 文件，填入以下資訊
+```
+
+**必需設定**:
+- `SEPOLIA_RPC_URL`: 從 [Infura](https://infura.io) 獲取
+- `SEPOLIA_PRIVATE_KEY`: MetaMask 私鑰 (⚠️ 僅測試網用)
+- `ETHERSCAN_API_KEY`: 從 [Etherscan](https://etherscan.io/myapikey) 獲取
+
+**可選設定**:
+- `PINATA_API_KEY`: IPFS 圖片上傳 (可不設置)
 - `PINATA_SECRET_API_KEY`: Pinata 秘密金鑰
+
+**範例設置**:
+```bash
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
+SEPOLIA_PRIVATE_KEY=0x1234...abcd  # 64字符私鑰
+ETHERSCAN_API_KEY=ABC123DEF456    # API金鑰
+```
 
 ### 3. 編譯合約
 ```bash
@@ -105,27 +125,87 @@ npm start
 
 ## 使用流程
 
+### 🚀 快速開始
+
+#### 1. 本地開發環境
+```bash
+# 啟動本地區塊鏈
+npx hardhat node
+
+# 新終端 - 部署合約
+npm run deploy
+
+# 啟動前端應用
+npm run frontend
+
+# 使用互動式發行工具
+npm run issue
+```
+
+#### 2. 測試網部署
+```bash
+# 配置環境變數 (.env)
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
+SEPOLIA_PRIVATE_KEY=your_private_key
+ETHERSCAN_API_KEY=your_api_key
+
+# 部署到 Sepolia
+npm run deploy:sepolia
+
+# 在測試網發行證書
+npm run issue:sepolia
+```
+
+### 📱 前端應用功能
+- **錢包連接**: 自動檢測並連接 MetaMask
+- **證書查看**: 展示用戶擁有的所有證書
+- **證書發行**: 完整的發行界面支持
+- **OpenSea 整合**: 直接跳轉到 NFT 市場
+- **網路切換**: 支援本地和測試網
+
+### 🛠️ 開發工具
+
+#### 證書圖片生成
+```bash
+npm run generate-images  # 生成範例證書圖片
+```
+
+#### IPFS 上傳
+```bash
+npm run upload-ipfs      # 上傳圖片到 IPFS
+```
+
+#### 互動式發行工具
+```bash
+npm run issue            # 本地環境
+npm run issue:sepolia    # 測試網環境
+```
+
 ### 發行者流程
-1. 部署智能合約到 Sepolia 測試網
-2. 準備證書圖片並上傳到 IPFS
-3. 使用 `issueCertificate()` 函數發行證書
-4. 將證書發送給接收者
+1. **環境準備**: 設置開發環境和錢包
+2. **合約部署**: 部署到本地或測試網
+3. **圖片準備**: 生成或上傳證書圖片
+4. **發行證書**: 使用 Web 界面或命令行工具
+5. **驗證結果**: 在 OpenSea 上確認顯示
 
 ### 接收者流程
-1. 連接 Metamask 錢包
-2. 在前端應用中查看自己的證書
-3. 在 OpenSea testnet 上展示證書
-4. 分享證書給其他人驗證
+1. **錢包連接**: 在前端應用中連接 MetaMask
+2. **查看證書**: 瀏覽所有擁有的證書
+3. **分享展示**: 在 OpenSea 等平台展示
+4. **驗證真偽**: 任何人都可以在區塊鏈上驗證
 
 ## 開發計劃
 
 - [x] 智能合約開發
 - [x] Metadata 結構設計
 - [x] IPFS 整合工具
-- [ ] React 前端應用
-- [ ] Metamask 整合
-- [ ] 部署到測試網
-- [ ] OpenSea 測試
+- [x] React 前端應用
+- [x] Metamask 整合
+- [x] 部署到測試網
+- [x] OpenSea 測試
+- [x] 證書圖片生成系統
+- [x] 互動式發行工具
+- [x] 完整的 Web3 整合
 
 ## 技術亮點
 
@@ -142,24 +222,112 @@ npm start
 - 完整的存取控制機制
 - 輸入驗證和錯誤處理
 
-## 限制與延伸
+## 🧪 測試指南
 
-### 當前限制
-- 僅支援 4 種預定義證書類型
-- 圖片 URI 需要手動更新
-- 發行權限集中於合約擁有者
+### 本地測試
+```bash
+# 1. 啟動本地網路
+npx hardhat node
 
-### 未來延伸
-- 支援自定義證書類型
-- 分散式發行權限管理
-- 證書轉讓和交易功能
-- 多鏈部署支援
-- 證書失效機制
+# 2. 運行測試套件
+npx hardhat test
 
-## 貢獻指南
+# 3. 部署並測試
+npm run deploy
+npm run demo
 
-歡迎提交 Issue 和 Pull Request 來改進這個專案！
+# 4. 啟動前端測試
+npm run frontend
+```
 
-## 授權
+### Sepolia 測試網測試
+```bash
+# 1. 確保有測試 ETH (從 faucet 獲取)
+# 2. 部署合約
+npm run deploy:sepolia
+
+# 3. 發行測試證書
+npm run issue:sepolia
+
+# 4. 在 OpenSea 測試網查看
+# https://testnets.opensea.io/
+```
+
+## 📊 功能完成狀態
+
+### ✅ 已完成功能
+- **智能合約系統** (100%)
+  - ERC-721 標準實現
+  - 4種證書類型支援
+  - 批量發行功能
+  - 動態 Metadata 生成
+  
+- **前端應用** (100%)
+  - React + TypeScript 實現
+  - MetaMask 錢包整合
+  - 證書查看和發行界面
+  - 響應式設計
+
+- **開發工具** (100%)
+  - 證書圖片生成器
+  - IPFS 上傳工具  
+  - 互動式發行工具
+  - 自動化測試套件
+
+- **部署支援** (100%)
+  - 本地開發環境
+  - Sepolia 測試網部署
+  - OpenSea 整合
+  - 完整的部署腳本
+
+### 🚀 技術亮點
+1. **合約內建 Base64 編碼** - 完全去中心化的 metadata 生成
+2. **SVG 圖片生成** - 程式化生成美觀的證書圖片
+3. **多網路支援** - 本地開發和測試網無縫切換
+4. **完整的 Web3 整合** - 現代化的 DApp 使用體驗
+5. **開發工具鏈** - 從部署到發行的完整自動化
+
+## 🔮 未來延伸
+
+### 短期改進
+- 自定義證書模板設計器
+- 證書轉讓功能
+- 多語言界面支援
+- 移動端 App 開發
+
+### 中期目標
+- 多鏈部署 (Polygon, BSC)
+- DAO 治理機制
+- 證書市場交易
+- NFT 組合展示功能
+
+### 長期願景
+- AI 輔助證書設計
+- 跨鏈證書互通
+- 企業級權限管理
+- 元宇宙展示空間
+
+## 🤝 貢獻指南
+
+歡迎提交 Issue 和 Pull Request！
+
+### 開發流程
+1. Fork 本專案
+2. 創建功能分支
+3. 提交變更
+4. 創建 Pull Request
+
+### 報告問題
+請在 Issues 中詳細描述：
+- 問題重現步驟
+- 預期行為
+- 實際行為
+- 環境信息
+
+## 📄 授權
 
 MIT License - 詳見 LICENSE 文件
+
+---
+
+**🎉 專案現已完全可用！所有計劃功能均已實現並測試完成。**

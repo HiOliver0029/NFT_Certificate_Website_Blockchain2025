@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import './App.css';
-import { 
-  CONTRACT_ABI, 
-  CERTIFICATE_TYPES, 
-  getCurrentNetwork, 
-  NETWORKS,
-  formatAddress,
-  formatDate,
-  getOpenSeaUrl,
-  getExplorerUrl
-} from './config';
+
+// 導入合約 ABI (簡化版)
+const CONTRACT_ABI = [
+  "function issueCertificate(address recipient, uint256 certType, string memory recipientName, string memory issuerName, string memory customMessage, string memory imageURI) public",
+  "function batchIssueCertificates(address[] memory recipients, uint256 certType, string[] memory recipientNames, string memory issuerName, string memory customMessage) public",
+  "function getCertificatesByOwner(address owner) public view returns (tuple(uint256 tokenId, uint256 certType, string recipientName, string issuerName, uint256 issueDate, string customMessage, string imageURI)[])",
+  "function getTotalCertificates() public view returns (uint256)",
+  "function getCertificateCountByType(uint256 certType) public view returns (uint256)",
+  "function tokenURI(uint256 tokenId) public view returns (string memory)",
+  "function owner() public view returns (address)",
+  "event CertificateIssued(uint256 indexed tokenId, address indexed recipient, uint256 certType, string recipientName)"
+];
+
+// 合約地址 (本地開發)
+const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+
+// 證書類型
+const CERTIFICATE_TYPES = {
+  0: { name: "區塊鏈先驅者證書", nameEn: "Blockchain Pioneer", emoji: "🚀" },
+  1: { name: "友情不滅證書", nameEn: "Eternal Friendship", emoji: "💝" },
+  2: { name: "Web3.0 公民證", nameEn: "Web3.0 Citizen", emoji: "🌐" },
+  3: { name: "課程完成證明", nameEn: "Course Completion", emoji: "🎓" }
+};
 
 interface Certificate {
   tokenId: number;
@@ -32,7 +45,6 @@ function App() {
   const [signer, setSigner] = useState<ethers.Signer | null>(null);
   const [certificates, setCertificates] = useState<Certificate[]>([]);
   const [activeTab, setActiveTab] = useState<'view' | 'issue'>('view');
-  const [currentNetwork, setCurrentNetwork] = useState(getCurrentNetwork());
   
   // 發行表單狀態
   const [issueForm, setIssueForm] = useState({
@@ -56,7 +68,7 @@ function App() {
   // 初始化合約
   const initializeContract = async (signer: ethers.Signer) => {
     try {
-      const contractInstance = new ethers.Contract(currentNetwork.contractAddress, CONTRACT_ABI, signer);
+      const contractInstance = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
       setContract(contractInstance);
       return contractInstance;
     } catch (error: any) {
@@ -159,18 +171,14 @@ function App() {
     }
   };
 
-  // 檢查網路切換
-  const checkNetwork = async () => {
-    if (provider) {
-      const network = await provider.getNetwork();
-      const expectedChainId = currentNetwork.chainId;
-      
-      if (network.chainId.toString() !== parseInt(expectedChainId, 16).toString()) {
-        setError(`請切換到 ${currentNetwork.name} 網路`);
-        return false;
-      }
-    }
-    return true;
+  // 格式化地址
+  const formatAddress = (address: string) => {
+    return `${address.slice(0, 6)}...${address.slice(-4)}`;
+  };
+
+  // 格式化日期
+  const formatDate = (timestamp: number) => {
+    return new Date(timestamp * 1000).toLocaleDateString('zh-TW');
   };
 
   useEffect(() => {
@@ -276,7 +284,7 @@ function App() {
                         </div>
                         <div className="cert-actions">
                           <a 
-                            href={getOpenSeaUrl(currentNetwork.contractAddress, cert.tokenId, currentNetwork)}
+                            href={`https://testnets.opensea.io/assets/sepolia/${CONTRACT_ADDRESS}/${cert.tokenId}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="opensea-link"
@@ -403,8 +411,7 @@ function App() {
 
       <footer className="App-footer">
         <p>© 2025 永恆數位榮譽證書 | 基於 Ethereum 區塊鏈</p>
-        <p>合約地址: {formatAddress(currentNetwork.contractAddress)}</p>
-        <p>網路: {currentNetwork.name}</p>
+        <p>合約地址: {CONTRACT_ADDRESS}</p>
       </footer>
     </div>
   );

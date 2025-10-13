@@ -1,0 +1,128 @@
+PS C:\Users\OliverLin\OneDrive\Desktop\NFT_token> node scripts/validate-environment.js
+🔍 驗證環境配置...
+
+📋 環境變數檢查:
+✅ SEPOLIA_RPC_URL: 已設置
+✅ SEPOLIA_PRIVATE_KEY: 已設置
+✅ 私鑰格式正確
+✅ ETHERSCAN_API_KEY: 已設置
+
+🌐 測試 RPC 連接...
+✅ RPC 連接成功
+   網路名稱: sepolia
+   Chain ID: 11155111
+
+💰 檢查錢包狀態...
+✅ 錢包地址: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+💳 餘額: 0.0 ETH
+⚠️  警告: 餘額可能不足以部署合約 (建議至少 0.01 ETH)
+   請從以下 faucet 獲取測試 ETH:
+   - https://sepoliafaucet.com/
+   - https://www.infura.io/faucet/sepolia
+
+🔍 測試 Etherscan API...
+✅ Etherscan API 連接成功
+
+🎉 環境驗證完成！
+
+✅ 您的環境已準備就緒，可以運行:
+   npm run deploy:sepolia
+PS C:\Users\OliverLin\OneDrive\Desktop\NFT_token> node scripts/validate-environment.js
+🔍 驗證環境配置...
+
+📋 環境變數檢查:
+✅ SEPOLIA_RPC_URL: 已設置
+✅ SEPOLIA_PRIVATE_KEY: 已設置
+✅ 私鑰格式正確
+✅ ETHERSCAN_API_KEY: 已設置
+
+🌐 測試 RPC 連接...
+✅ RPC 連接成功
+   網路名稱: sepolia
+   Chain ID: 11155111
+
+💰 檢查錢包狀態...
+✅ 錢包地址: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+💳 餘額: 0.13968371 ETH
+✅ 餘額充足，可以進行部署
+
+🔍 測試 Etherscan API...
+✅ Etherscan API 連接成功
+
+🎉 環境驗證完成！
+
+✅ 您的環境已準備就緒，可以運行:
+   npm run deploy:sepolia
+PS C:\Users\OliverLin\OneDrive\Desktop\NFT_token> npm run deploy:sepolia
+
+> eternal-digital-certificate@1.0.0 deploy:sepolia
+> hardhat run scripts/deploy-sepolia.js --network sepolia
+
+🚀 開始部署到 Sepolia 測試網...
+📋 部署資訊:
+  部署者地址: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+  部署者餘額: 0.13968371 ETH
+  網路: sepolia
+  Chain ID: 11155111
+
+📝 開始編譯合約...
+🔄 正在部署 EternalDigitalHonorCertificate 合約...
+
+✅ 部署完成!
+📍 合約地址: 0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+⏱️  部署時間: 17.37 秒
+📄 部署交易 Hash: 0xdc99582faa366a22de7a908c2da80abb0fff7152f80e4ea04c54181504e1441a
+⛽ Gas 使用量: 4372946
+
+⏳ 等待區塊確認...
+✅ 已確認 [AsyncFunction: confirmations] 個區塊
+💰 實際 Gas 使用: 4337355
+
+🧪 驗證合約基本功能...
+✅ 合約名稱: Eternal Digital Honor Certificate
+✅ 合約符號: EDHC
+✅ 合約擁有者: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+✅ 擁有者驗證通過
+
+🎯 部署總結:
+──────────────────────────────────────────────────
+合約名稱: EternalDigitalHonorCertificate
+網路: Sepolia Testnet
+合約地址: 0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+部署者: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+區塊鏈瀏覽器: https://sepolia.etherscan.io/address/0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+──────────────────────────────────────────────────
+
+📱 前端配置更新:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+REACT_APP_NETWORK_ID=11155111
+
+📋 請更新您的 .env 文件:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+
+📱 前端配置更新:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+REACT_APP_NETWORK_ID=11155111
+
+📋 請更新您的 .env 文件:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+
+🌊 OpenSea 測試網連結:
+📱 前端配置更新:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+REACT_APP_NETWORK_ID=11155111
+
+📋 請更新您的 .env 文件:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+
+🌊 OpenSea 測試網連結:
+
+📋 請更新您的 .env 文件:
+REACT_APP_CONTRACT_ADDRESS=0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+
+🌊 OpenSea 測試網連結:
+
+🌊 OpenSea 測試網連結:
+https://testnets.opensea.io/assets/sepolia/0xE95EF0276c088ed9478b0https://testnets.opensea.io/assets/sepolia/0xE95EF0276c088ed9478b0c9d03E279F7Cc9Fe6e5
+
+🎉 部署完成! 合約已成功部署到 Sepolia 測試網
