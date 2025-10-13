@@ -1,0 +1,46 @@
+{
+  "name": "友情不滅證書 #1",
+  "description": "永恆數位榮譽證書 - 此證書象徵著持有者與發行者之間永恆不變的友誼。這份數位友情紀念章將永遠保存在區塊鏈上，見證美好的友誼。",
+  "image": "https://ipfs.io/ipfs/QmYourImageHash2",
+  "external_url": "https://your-website.com",
+  "attributes": [
+    {
+      "trait_type": "Certificate Type",
+      "value": "Eternal Friendship Certificate"
+    },
+    {
+      "trait_type": "Certificate Type (Chinese)",
+      "value": "友情不滅證書"
+    },
+    {
+      "trait_type": "Recipient",
+      "value": "Bob"
+    },
+    {
+      "trait_type": "Issuer",
+      "value": "Alice"
+    },
+    {
+      "trait_type": "Issue Date",
+      "value": "2025-10-04"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Friendship Level",
+      "value": "Eternal"
+    },
+    {
+      "trait_type": "Custom Message",
+      "value": "友誼長存，永不凋零！"
+    }
+  ],
+  "properties": {
+    "category": "Digital Certificate",
+    "subcategory": "Friendship Token",
+    "language": "Traditional Chinese",
+    "version": "1.0"
+  }
+}

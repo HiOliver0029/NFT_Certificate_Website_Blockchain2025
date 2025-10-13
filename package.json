@@ -1,0 +1,24 @@
+{
+  "name": "eternal-digital-certificate",
+  "version": "1.0.0",
+  "description": "Blockchain-based NFT Certificate System",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "test": "hardhat test",
+    "demo": "hardhat run scripts/demo.js"
+  },
+  "author": "Digital Certificate Team",
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.22.15",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@openzeppelin/contracts": "^5.1.0",
+    "ethers": "^6.13.4",
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.7",
+    "form-data": "^4.0.1"
+  }
+}

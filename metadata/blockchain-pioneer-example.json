@@ -1,0 +1,46 @@
+{
+  "name": "區塊鏈先驅者證書 #1",
+  "description": "永恆數位榮譽證書 - 此證書表彰持有者在區塊鏈領域的先驅精神與貢獻。基於區塊鏈的不可竄改數位證書，具有唯一性、永久性，並可在區塊鏈上公開驗證。",
+  "image": "https://ipfs.io/ipfs/QmYourImageHash1",
+  "external_url": "https://your-website.com",
+  "attributes": [
+    {
+      "trait_type": "Certificate Type",
+      "value": "Blockchain Pioneer Certificate"
+    },
+    {
+      "trait_type": "Certificate Type (Chinese)",
+      "value": "區塊鏈先驅者證書"
+    },
+    {
+      "trait_type": "Recipient",
+      "value": "Alice"
+    },
+    {
+      "trait_type": "Issuer",
+      "value": "Digital Certificate Authority"
+    },
+    {
+      "trait_type": "Issue Date",
+      "value": "2025-10-04"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Achievement Level",
+      "value": "Pioneer"
+    },
+    {
+      "trait_type": "Custom Message",
+      "value": "恭喜您成為區塊鏈技術的先驅者！"
+    }
+  ],
+  "properties": {
+    "category": "Digital Certificate",
+    "subcategory": "Blockchain Achievement",
+    "language": "Traditional Chinese",
+    "version": "1.0"
+  }
+}
