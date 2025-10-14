@@ -10,7 +10,7 @@ export const NETWORKS = {
     chainId: '0xaa36a7', // 11155111
     name: 'Sepolia Test Network',
     rpcUrl: 'https://sepolia.infura.io/v3/',
-    contractAddress: process.env.REACT_APP_CONTRACT_ADDRESS || '',
+    contractAddress: process.env.REACT_APP_CONTRACT_ADDRESS || '0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed',
     explorer: 'https://sepolia.etherscan.io'
   }
 };
@@ -28,16 +28,25 @@ export const getCurrentNetwork = () => {
 
 // 合約 ABI
 export const CONTRACT_ABI = [
-  "function issueCertificate(address recipient, uint256 certType, string memory recipientName, string memory issuerName, string memory customMessage, string memory imageURI) public returns (uint256)",
-  "function batchIssueCertificates(address[] memory recipients, uint256 certType, string[] memory recipientNames, string memory issuerName, string memory customMessage) public returns (uint256[] memory)",
-  "function getCertificatesByOwner(address owner) public view returns (tuple(uint256 tokenId, uint256 certType, string recipientName, string issuerName, uint256 issueDate, string customMessage, string imageURI)[])",
+  // 發行證書函數（實際簽名，無 imageURI 參數）
+  "function issueCertificate(address to, uint8 certType, string memory recipientName, string memory issuerName, string memory customMessage) public returns (uint256)",
+  // 批量發行證書
+  "function batchIssueCertificates(address[] memory recipients, uint8 certType, string[] memory recipientNames, string memory issuerName, string memory customMessage) public",
+  // 獲取用戶的證書 token ID 數組
+  "function getCertificatesByOwner(address owner) public view returns (uint256[])",
+  // 獲取證書詳細資訊（通過 public mapping）
+  "function certificates(uint256 tokenId) public view returns (uint8 certType, string recipientName, string issuerName, uint256 issueDate, string customMessage, string imageURI)",
+  // 其他查詢函數
   "function getTotalCertificates() public view returns (uint256)",
-  "function getCertificateCountByType(uint256 certType) public view returns (uint256)",
+  "function certificateCount(uint8 certType) public view returns (uint256)",
   "function tokenURI(uint256 tokenId) public view returns (string memory)",
+  "function ownerOf(uint256 tokenId) public view returns (address)",
+  "function balanceOf(address owner) public view returns (uint256)",
   "function owner() public view returns (address)",
   "function name() public view returns (string memory)",
   "function symbol() public view returns (string memory)",
-  "event CertificateIssued(uint256 indexed tokenId, address indexed recipient, uint256 certType, string recipientName)"
+  // 事件
+  "event CertificateIssued(uint256 indexed tokenId, address indexed recipient, uint8 certType, string recipientName)"
 ];
 
 // 證書類型定義
@@ -77,6 +86,16 @@ export const formatDate = (timestamp) => {
   return new Date(timestamp * 1000).toLocaleDateString('zh-TW');
 };
 
+// 獲取 Etherscan NFT 查看連結
+export const getEtherscanNftUrl = (contractAddress, tokenId, network) => {
+  if (network.name === 'Localhost 8545') {
+    return `http://localhost:8545/token/${contractAddress}?a=${tokenId}`;
+  }
+  
+  return `${network.explorer}/token/${contractAddress}?a=${tokenId}`;
+};
+
+// 保留舊的 OpenSea 函數以保持向後兼容（但不推薦使用於測試網）
 export const getOpenSeaUrl = (contractAddress, tokenId, network) => {
   const baseUrl = network.name === 'Sepolia Test Network' 
     ? 'https://testnets.opensea.io/assets/sepolia'

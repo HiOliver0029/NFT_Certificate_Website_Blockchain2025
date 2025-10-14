@@ -1,3 +1,88 @@
+10/14
+
+PS C:\Users\OliverLin\OneDrive\Desktop\NFT_token> node scripts/validate-environment.js
+🔍 驗證環境配置...
+
+📋 環境變數檢查:
+✅ SEPOLIA_RPC_URL: 已設置
+✅ SEPOLIA_PRIVATE_KEY: 已設置
+✅ 私鑰格式正確
+✅ ETHERSCAN_API_KEY: 已設置
+
+🌐 測試 RPC 連接...
+✅ RPC 連接成功
+   網路名稱: sepolia
+   Chain ID: 11155111
+
+💰 檢查錢包狀態...
+✅ 錢包地址: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+💳 餘額: 0.48649836343060232 ETH
+✅ 餘額充足，可以進行部署
+
+🔍 測試 Etherscan API...
+✅ Etherscan API 連接成功
+
+🎉 環境驗證完成！
+
+✅ 您的環境已準備就緒，可以運行:
+   npm run deploy:sepolia
+PS C:\Users\OliverLin\OneDrive\Desktop\NFT_token> npm run deploy:sepolia    
+
+> eternal-digital-certificate@1.0.0 deploy:sepolia
+> hardhat run scripts/deploy-sepolia.js --network sepolia
+
+🚀 開始部署到 Sepolia 測試網...
+📋 部署資訊:
+  部署者地址: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+  部署者餘額: 0.48649836343060232 ETH
+  網路: sepolia
+  Chain ID: 11155111
+
+📝 開始編譯合約...
+🔄 正在部署 EternalDigitalHonorCertificate 合約...
+
+✅ 部署完成!
+📍 合約地址: 0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed
+⏱️  部署時間: 31.98 秒
+📄 部署交易 Hash: 0xa71dd8fbb17b954f68448ca5929cbe7fd8a35e101db9488938e33628a17c88d8
+⛽ Gas 使用量: 4372946
+
+⏳ 等待區塊確認...
+✅ 已確認 [AsyncFunction: confirmations] 個區塊
+💰 實際 Gas 使用: 4337355
+
+🧪 驗證合約基本功能...
+✅ 合約名稱: Eternal Digital Honor Certificate
+✅ 合約符號: EDHC
+✅ 合約擁有者: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+✅ 擁有者驗證通過
+
+🎯 部署總結:
+──────────────────────────────────────────────────
+合約名稱: EternalDigitalHonorCertificate
+網路: Sepolia Testnet
+合約地址: 0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed
+部署者: 0x0165A7de108b2adE352a71eBf15e25864ffE60E3
+區塊鏈瀏覽器: https://sepolia.etherscan.io/address/0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed
+──────────────────────────────────────────────────
+
+📱 前端配置更新:
+REACT_APP_CONTRACT_ADDRESS=0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed       
+REACT_APP_NETWORK_ID=11155111
+
+📋 請更新您的 .env 文件:
+REACT_APP_CONTRACT_ADDRESS=0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed       
+
+🌊 OpenSea 測試網連結:
+https://testnets.opensea.io/assets/sepolia/0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed
+
+🎉 部署完成! 合約已成功部署到 Sepolia 測試網
+
+🎊 所有操作完成!
+
+-------------------------------------------------------------
+
+10/13
 PS C:\Users\OliverLin\OneDrive\Desktop\NFT_token> node scripts/validate-environment.js
 🔍 驗證環境配置...
 

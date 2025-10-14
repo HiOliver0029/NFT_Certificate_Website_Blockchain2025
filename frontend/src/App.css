@@ -498,6 +498,28 @@
   text-align: center;
 }
 
+/* Etherscan 查看連結樣式 */
+.etherscan-link {
+  display: inline-block;
+  background: linear-gradient(45deg, #21325b, #374151);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(33, 50, 91, 0.3);
+}
+
+.etherscan-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(33, 50, 91, 0.5);
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(45deg, #2d4373, #4b5563);
+}
+
+/* 保留舊的 OpenSea 樣式以保持向後兼容 */
 .opensea-link {
   display: inline-block;
   background: linear-gradient(45deg, #2081e2, #1e40af);

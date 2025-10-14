@@ -8,7 +8,7 @@ import {
   NETWORKS,
   formatAddress,
   formatDate,
-  getOpenSeaUrl,
+  getEtherscanNftUrl,
   getExplorerUrl
 } from './config';
 
@@ -103,16 +103,32 @@ function App() {
       const contractToUse = contractInstance || contract;
       if (!contractToUse) return;
 
-      const userCertificates = await contractToUse.getCertificatesByOwner(address);
-      setCertificates(userCertificates.map((cert: any) => ({
-        tokenId: Number(cert.tokenId),
-        certType: Number(cert.certType),
-        recipientName: cert.recipientName,
-        issuerName: cert.issuerName,
-        issueDate: Number(cert.issueDate),
-        customMessage: cert.customMessage,
-        imageURI: cert.imageURI
-      })));
+      // 獲取用戶的所有 token ID
+      const tokenIds = await contractToUse.getCertificatesByOwner(address);
+      
+      // 如果沒有證書，設置空數組
+      if (tokenIds.length === 0) {
+        setCertificates([]);
+        return;
+      }
+
+      // 為每個 token ID 獲取完整的證書資訊
+      const certificatesData = await Promise.all(
+        tokenIds.map(async (tokenId: bigint) => {
+          const cert = await contractToUse.certificates(tokenId);
+          return {
+            tokenId: Number(tokenId),
+            certType: Number(cert.certType),
+            recipientName: cert.recipientName,
+            issuerName: cert.issuerName,
+            issueDate: Number(cert.issueDate),
+            customMessage: cert.customMessage,
+            imageURI: cert.imageURI
+          };
+        })
+      );
+      
+      setCertificates(certificatesData);
     } catch (error: any) {
       console.error('載入證書失敗:', error);
       setError('載入證書失敗: ' + error.message);
@@ -126,16 +142,18 @@ function App() {
     try {
       setLoading(true);
       
+      // 使用正確的合約函數簽名（無 imageURI 參數）
       const tx = await contract.issueCertificate(
         issueForm.recipient,
         issueForm.certType,
         issueForm.recipientName,
         issueForm.issuerName,
-        issueForm.customMessage,
-        issueForm.imageURI || 'https://example.com/default-image.png'
+        issueForm.customMessage
       );
 
+      console.log('交易已提交:', tx.hash);
       await tx.wait();
+      console.log('交易已確認');
       
       // 重新載入證書
       await loadCertificates(account);
@@ -276,12 +294,12 @@ function App() {
                         </div>
                         <div className="cert-actions">
                           <a 
-                            href={getOpenSeaUrl(currentNetwork.contractAddress, cert.tokenId, currentNetwork)}
+                            href={getEtherscanNftUrl(currentNetwork.contractAddress, cert.tokenId, currentNetwork)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="opensea-link"
+                            className="etherscan-link"
                           >
-                            🌊 在 OpenSea 查看
+                            🔍 在 Etherscan 查看
                           </a>
                         </div>
                       </div>
@@ -394,7 +412,7 @@ function App() {
               </div>
               <div className="feature">
                 <h3>🌐 全球通用</h3>
-                <p>在 OpenSea 等 NFT 市場展示您的成就</p>
+                <p>在 Etherscan 區塊鏈瀏覽器上驗證和展示您的成就</p>
               </div>
             </div>
           </div>
