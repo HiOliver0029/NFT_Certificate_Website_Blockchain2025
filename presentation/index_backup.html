@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永恆數位榮譽證書 - 項目展示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <!-- <section class="slide title-slide"> -->
+        <section class="slide">
+            <h1>🏆 永恆數位榮譽證書</h1>
+            <h2>Eternal Digital Honor Certificate</h2>
+            <p class="subtitle">基於區塊鏈的 NFT 證書發行系統</p>
+            <div class="author-info">
+                <p><strong>開發者:</strong> Oliver Lin</p>
+                <p><strong>日期:</strong> 2025年10月</p>
+                <p><strong>技術棧:</strong> Ethereum • Solidity • React • TypeScript</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Project Overview -->
+        <section class="slide">
+            <h2>📋 專案概述</h2>
+            <div class="content-grid">
+                <div class="overview-box">
+                    <h3>💡 專案目標</h3>
+                    <p>創建一個去中心化的數位證書發行系統，利用區塊鏈技術確保證書的永久性、不可篡改性和可驗證性</p>
+                </div>
+                <div class="overview-box">
+                    <h3>🎯 核心功能</h3>
+                    <ul>
+                        <li>智能合約自動化證書發行</li>
+                        <li>多種證書類型支持</li>
+                        <li>區塊鏈永久存儲</li>
+                        <li>Web3 錢包整合</li>
+                        <li>實時鏈上驗證</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Technical Architecture -->
+        <section class="slide">
+            <h2>🏗️ 技術架構</h2>
+            <div class="architecture">
+                <div class="layer">
+                    <h3>前端層 (Frontend)</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React 18</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">ethers.js 6.13.4</span>
+                        <span class="tech-badge">MetaMask</span>
+                    </div>
+                </div>
+                <div class="arrow">⬇️</div>
+                <div class="layer">
+                    <h3>區塊鏈層 (Blockchain)</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Ethereum</span>
+                        <span class="tech-badge">Solidity ^0.8.27</span>
+                        <span class="tech-badge">ERC-721 NFT</span>
+                        <span class="tech-badge">Sepolia Testnet</span>
+                    </div>
+                </div>
+                <div class="arrow">⬇️</div>
+                <div class="layer">
+                    <h3>開發工具 (Development)</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Hardhat 2.22.15</span>
+                        <span class="tech-badge">OpenZeppelin</span>
+                        <span class="tech-badge">Etherscan API</span>
+                        <span class="tech-badge">IPFS/Pinata</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Smart Contract Features -->
+        <section class="slide">
+            <h2>📜 智能合約功能</h2>
+            <div class="contract-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎫</div>
+                    <h3>證書發行</h3>
+                    <code>issueCertificate()</code>
+                    <p>支持單個證書發行，包含接收者資訊、證書類型、自訂訊息等</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>批量發行</h3>
+                    <code>batchIssueCertificates()</code>
+                    <p>一次性發行多張證書，節省 Gas 費用</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>證書查詢</h3>
+                    <code>getCertificatesByOwner()</code>
+                    <p>根據錢包地址查詢所有持有的證書</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>鏈上驗證</h3>
+                    <code>certificates()</code>
+                    <p>任何人都可以驗證證書的真實性和詳細資訊</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Certificate Types -->
+        <section class="slide">
+            <h2>🏅 證書類型</h2>
+            <div class="cert-types-grid">
+                <div class="cert-type-card">
+                    <div class="cert-emoji">🎓</div>
+                    <h3>學術成就證書</h3>
+                    <p>Academic Achievement</p>
+                    <span class="type-id">Type 0</span>
+                </div>
+                <div class="cert-type-card">
+                    <div class="cert-emoji">🏆</div>
+                    <h3>專業認證證書</h3>
+                    <p>Professional Certification</p>
+                    <span class="type-id">Type 1</span>
+                </div>
+                <div class="cert-type-card">
+                    <div class="cert-emoji">👨‍💻</div>
+                    <h3>技術能力證書</h3>
+                    <p>Technical Skills</p>
+                    <span class="type-id">Type 2</span>
+                </div>
+                <div class="cert-type-card">
+                    <div class="cert-emoji">🌟</div>
+                    <h3>貢獻榮譽證書</h3>
+                    <p>Contribution Honor</p>
+                    <span class="type-id">Type 3</span>
+                </div>
+                <div class="cert-type-card">
+                    <div class="cert-emoji">🎯</div>
+                    <h3>活動參與證書</h3>
+                    <p>Event Participation</p>
+                    <span class="type-id">Type 4</span>
+                </div>
+                <div class="cert-type-card">
+                    <div class="cert-emoji">🎓</div>
+                    <h3>區塊鏈學習證書</h3>
+                    <p>Blockchain Learning</p>
+                    <span class="type-id">Type 5</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Deployment Information -->
+        <section class="slide">
+            <h2>🚀 部署資訊</h2>
+            <div class="deployment-info">
+                <div class="info-box highlight">
+                    <h3>📍 合約地址</h3>
+                    <code class="contract-address">0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed</code>
+                    <a href="https://sepolia.etherscan.io/address/0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed" target="_blank" class="view-link">
+                        🔍 在 Etherscan 查看
+                    </a>
+                </div>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h4>🌐 網路</h4>
+                        <p>Sepolia Testnet</p>
+                        <small>Chain ID: 11155111</small>
+                    </div>
+                    <div class="info-box">
+                        <h4>📅 部署日期</h4>
+                        <p>2025年10月</p>
+                        <small>已驗證合約</small>
+                    </div>
+                    <div class="info-box">
+                        <h4>💰 Gas 成本</h4>
+                        <p>~0.0004 ETH</p>
+                        <small>每張證書</small>
+                    </div>
+                    <div class="info-box">
+                        <h4>📊 已發行</h4>
+                        <p>1+ 證書</p>
+                        <small>持續增加中</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Demo & Features -->
+        <section class="slide">
+            <h2>✨ 系統功能展示</h2>
+            <div class="demo-features">
+                <div class="demo-card">
+                    <h3>🔐 錢包連接</h3>
+                    <ul>
+                        <li>一鍵連接 MetaMask</li>
+                        <li>自動網路切換</li>
+                        <li>餘額即時顯示</li>
+                        <li>多錢包支持</li>
+                    </ul>
+                </div>
+                <div class="demo-card">
+                    <h3>📋 證書管理</h3>
+                    <ul>
+                        <li>查看所有持有證書</li>
+                        <li>證書詳細資訊展示</li>
+                        <li>Etherscan 鏈上驗證</li>
+                        <li>Token ID 追蹤</li>
+                    </ul>
+                </div>
+                <div class="demo-card">
+                    <h3>✍️ 證書發行</h3>
+                    <ul>
+                        <li>直觀的發行介面</li>
+                        <li>表單驗證</li>
+                        <li>交易狀態追蹤</li>
+                        <li>Gas 預估</li>
+                    </ul>
+                </div>
+                <div class="demo-card">
+                    <h3>🎨 用戶體驗</h3>
+                    <ul>
+                        <li>響應式設計</li>
+                        <li>優雅的動畫效果</li>
+                        <li>即時錯誤提示</li>
+                        <li>Loading 狀態管理</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Live Demo Screenshot Placeholder -->
+        <section class="slide">
+            <h2>💻 系統介面展示</h2>
+            <div class="screenshot-section">
+                <div class="screenshot-placeholder">
+                    <h3>前端應用截圖</h3>
+                    <div class="screenshot-box">
+                        <p>🖼️ 證書管理介面</p>
+                        <small>顯示已持有的 NFT 證書列表</small>
+                    </div>
+                    <div class="screenshot-box">
+                        <p>✍️ 證書發行介面</p>
+                        <small>輸入接收者資訊並發行新證書</small>
+                    </div>
+                    <div class="screenshot-box">
+                        <p>🔍 Etherscan 驗證</p>
+                        <small>在區塊鏈瀏覽器上查看證書詳情</small>
+                    </div>
+                </div>
+                <p class="demo-note">💡 實際演示：可以現場展示系統運行</p>
+            </div>
+        </section>
+
+        <!-- Slide 9: Technical Challenges -->
+        <section class="slide">
+            <h2>⚡ 技術挑戰與解決方案</h2>
+            <div class="challenges">
+                <div class="challenge-item">
+                    <h3>🔧 挑戰 1: ABI 不匹配</h3>
+                    <p><strong>問題:</strong> 前端 ABI 與合約實際簽名不一致，導致 "could not decode result data" 錯誤</p>
+                    <p><strong>解決:</strong> 修正 ABI 定義，移除不存在的 imageURI 參數，更新 getCertificatesByOwner 返回類型為 uint256[]</p>
+                </div>
+                <div class="challenge-item">
+                    <h3>🌐 挑戰 2: OpenSea 測試網下線</h3>
+                    <p><strong>問題:</strong> OpenSea 於 2024 年停止支持測試網，原有的 NFT 查看功能失效</p>
+                    <p><strong>解決:</strong> 改用 Etherscan NFT 查看器，提供完整的鏈上資訊驗證功能</p>
+                </div>
+                <div class="challenge-item">
+                    <h3>🔑 挑戰 3: 私鑰管理</h3>
+                    <p><strong>問題:</strong> 部署時使用錢包地址而非私鑰，導致部署失敗</p>
+                    <p><strong>解決:</strong> 創建詳細的環境變數設置指南，確保正確配置私鑰</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Development Process -->
+        <section class="slide">
+            <h2>🛠️ 開發流程</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4>需求分析與設計</h4>
+                        <p>定義證書類型、智能合約架構、前端功能</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>智能合約開發</h4>
+                        <p>使用 Solidity 開發 ERC-721 NFT 合約，整合 OpenZeppelin</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4>前端開發</h4>
+                        <p>React + TypeScript，整合 MetaMask，實現證書管理介面</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>測試網部署</h4>
+                        <p>部署到 Sepolia 測試網，進行功能測試與驗證</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h4>問題修復與優化</h4>
+                        <p>解決 ABI 不匹配、更新 UI、改善用戶體驗</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Key Learnings -->
+        <section class="slide">
+            <h2>📚 核心學習成果</h2>
+            <div class="learnings-grid">
+                <div class="learning-card">
+                    <h3>🔗 區塊鏈開發</h3>
+                    <ul>
+                        <li>Solidity 智能合約編程</li>
+                        <li>ERC-721 NFT 標準實作</li>
+                        <li>Gas 優化技巧</li>
+                        <li>合約安全性考量</li>
+                    </ul>
+                </div>
+                <div class="learning-card">
+                    <h3>⚛️ Web3 整合</h3>
+                    <ul>
+                        <li>ethers.js 6.x 使用</li>
+                        <li>MetaMask 錢包整合</li>
+                        <li>交易簽名與發送</li>
+                        <li>事件監聽與處理</li>
+                    </ul>
+                </div>
+                <div class="learning-card">
+                    <h3>🛠️ 開發工具</h3>
+                    <ul>
+                        <li>Hardhat 開發環境</li>
+                        <li>Etherscan API 使用</li>
+                        <li>測試網部署流程</li>
+                        <li>合約驗證方法</li>
+                    </ul>
+                </div>
+                <div class="learning-card">
+                    <h3>🎨 前端開發</h3>
+                    <ul>
+                        <li>React Hooks 進階用法</li>
+                        <li>TypeScript 類型安全</li>
+                        <li>響應式設計實踐</li>
+                        <li>錯誤處理最佳實踐</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Future Enhancements -->
+        <section class="slide">
+            <h2>🚀 未來優化方向</h2>
+            <div class="future-grid">
+                <div class="future-card">
+                    <h3>📱 功能擴展</h3>
+                    <ul>
+                        <li>支持證書轉讓功能</li>
+                        <li>添加證書過期機制</li>
+                        <li>實作證書撤銷功能</li>
+                        <li>多語言支持 (i18n)</li>
+                    </ul>
+                </div>
+                <div class="future-card">
+                    <h3>🎨 UI/UX 改進</h3>
+                    <ul>
+                        <li>證書預覽功能</li>
+                        <li>自訂證書樣式</li>
+                        <li>PDF 導出功能</li>
+                        <li>分享到社群媒體</li>
+                    </ul>
+                </div>
+                <div class="future-card">
+                    <h3>⛓️ 區塊鏈升級</h3>
+                    <ul>
+                        <li>部署到主網 (Mainnet)</li>
+                        <li>支援多鏈 (Polygon, BSC)</li>
+                        <li>Layer 2 整合 (Optimism)</li>
+                        <li>跨鏈橋接功能</li>
+                    </ul>
+                </div>
+                <div class="future-card">
+                    <h3>🔐 安全性增強</h3>
+                    <ul>
+                        <li>多簽名權限管理</li>
+                        <li>Role-based access control</li>
+                        <li>智能合約審計</li>
+                        <li>緊急暫停機制</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Project Statistics -->
+        <section class="slide">
+            <h2>📊 專案統計數據</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">程式碼行數</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">核心功能</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">證書類型</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">測試覆蓋率</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0.0004</div>
+                    <div class="stat-label">ETH Gas 成本</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">已發行證書</div>
+                </div>
+            </div>
+            <div class="tech-count">
+                <h3>技術棧組成</h3>
+                <div class="tech-breakdown">
+                    <div class="tech-bar">
+                        <span class="bar-label">Solidity</span>
+                        <div class="bar" style="width: 30%; background: #363636;">30%</div>
+                    </div>
+                    <div class="tech-bar">
+                        <span class="bar-label">TypeScript</span>
+                        <div class="bar" style="width: 40%; background: #3178c6;">40%</div>
+                    </div>
+                    <div class="tech-bar">
+                        <span class="bar-label">React/JSX</span>
+                        <div class="bar" style="width: 20%; background: #61dafb;">20%</div>
+                    </div>
+                    <div class="tech-bar">
+                        <span class="bar-label">CSS</span>
+                        <div class="bar" style="width: 10%; background: #264de4;">10%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Conclusion -->
+        <section class="slide">
+            <h2>💡 專案總結</h2>
+            <div class="conclusion">
+                <div class="conclusion-box success">
+                    <h3>✅ 已達成目標</h3>
+                    <ul>
+                        <li>成功開發完整的 NFT 證書系統</li>
+                        <li>部署到 Sepolia 測試網並驗證</li>
+                        <li>實現前端與智能合約無縫整合</li>
+                        <li>發行第一張區塊鏈證書</li>
+                        <li>建立完整的技術文檔</li>
+                    </ul>
+                </div>
+                <div class="conclusion-box highlight">
+                    <h3>🎯 核心價值</h3>
+                    <ul>
+                        <li><strong>不可篡改:</strong> 區塊鏈確保證書永久有效</li>
+                        <li><strong>可驗證性:</strong> 任何人都可以驗證證書真實性</li>
+                        <li><strong>去中心化:</strong> 不依賴任何中心化機構</li>
+                        <li><strong>永久存儲:</strong> 證書永遠保存在鏈上</li>
+                        <li><strong>真正擁有:</strong> NFT 完全歸屬持有者</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Thank You -->
+        <!-- <section class="slide thank-you-slide"> -->
+        <section class="slide">
+            <h1>🙏 感謝聆聽</h1>
+            <div class="thank-you-content">
+                <h2>永恆數位榮譽證書</h2>
+                <p class="tagline">讓每一份成就，在區塊鏈上永恆閃耀 ✨</p>
+                
+                <div class="contact-info">
+                    <h3>專案資訊</h3>
+                    <p>🔗 <strong>合約地址:</strong> 0x7B8DD9B91828D4A1E7167E7b21E73e014E5ae4Ed</p>
+                    <p>🌐 <strong>網路:</strong> Sepolia Testnet</p>
+                    <p>💻 <strong>GitHub:</strong> HiOliver0029/eternal-digital-honor-certificate</p>
+                    <p>📧 <strong>開發者:</strong> Oliver Lin</p>
+                </div>
+
+                <div class="qr-placeholder">
+                    <p>📱 掃描 QR Code 查看專案</p>
+                    <div class="qr-box">
+                        <p>GitHub Repository</p>
+                    </div>
+                </div>
+
+                <h2 class="questions">❓ Questions?</h2>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="controls">
+        <button id="prevBtn" class="nav-btn">◀ 上一頁</button>
+        <span id="slideNumber" class="slide-counter">1 / 15</span>
+        <button id="nextBtn" class="nav-btn">下一頁 ▶</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
